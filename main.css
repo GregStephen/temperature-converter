@@ -2,6 +2,19 @@ body {
     background-color: moccasin;
 }
 
+form {
+    margin: auto;
+    border: 1px solid black;
+    width: 60%;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+input {
+    margin: 1em;
+}
+
 .red {
     color: red;
 }
@@ -12,4 +25,10 @@ body {
 
 .green {
     color: green;
+}
+
+#tempOutput {
+    width: 60%;
+    text-align: center;
+    margin: auto;
 }
