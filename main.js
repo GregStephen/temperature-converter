@@ -13,11 +13,26 @@ const printToDom = (divId, textToPrint) => {
 
 const domStringBuilder = (finalTemp, unit) => {
     let domString = "";
-    domString += `<h2>`;
-        domString += `${finalTemp} `;
-        domString += `degrees `;
-        domString += `${unit}`; 
-    domString += `</h2>`;
+    if(finalTemp > 90 && unit === "F" || finalTemp > 32 && unit === "C"){
+        domString += `<h2 class="red">`;
+            domString += `${finalTemp} `;
+            domString += `degrees `;
+            domString += `${unit}`; 
+        domString += `</h2>`;
+    } else if (finalTemp >= 32 && unit === "F" || finalTemp >= 0 && unit === "C"){
+        domString += `<h2 class="green">`;
+            domString += `${finalTemp} `;
+            domString += `degrees `;
+            domString += `${unit}`; 
+        domString += `</h2>`;
+    } else {
+        domString += `<h2 class="blue">`;
+            domString += `${finalTemp} `;
+            domString += `degrees `;
+            domString += `${unit}`; 
+        domString += `</h2>`;
+    }
+    
     printToDom("tempOutput", domString);
 };
 const toCelsius = (temp) => {
