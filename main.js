@@ -16,25 +16,26 @@ const domStringBuilder = (finalTemp, unit) => {
     if(finalTemp > 90 && unit === "F" || finalTemp > 32 && unit === "C"){
         domString += `<h2 class="red">`;
             domString += `${finalTemp} `;
-            domString += `degrees `;
+            domString += `&deg;`;
             domString += `${unit}`; 
         domString += `</h2>`;
     } else if (finalTemp >= 32 && unit === "F" || finalTemp >= 0 && unit === "C"){
         domString += `<h2 class="green">`;
             domString += `${finalTemp} `;
-            domString += `degrees `;
+            domString += `&deg;`;
             domString += `${unit}`; 
         domString += `</h2>`;
     } else {
         domString += `<h2 class="blue">`;
             domString += `${finalTemp} `;
-            domString += `degrees `;
+            domString += `&deg;`;
             domString += `${unit}`; 
         domString += `</h2>`;
     }
     
     printToDom("tempOutput", domString);
 };
+
 const toCelsius = (temp) => {
     let convertedTemp = (((temp - 32) * 5) / 9);
     domStringBuilder(convertedTemp, "C");
@@ -46,16 +47,16 @@ const toFahrenheit = (temp) => {
 };
 
 const determineConverter = (temp) => {
-    console.log("hey");
-    console.log(temp); 
-    if(cBtn.checked) {
+    console.log("temp: ", temp); 
+    if(temp === "") {
+        printToDom("tempOutput", `<h3 class="red">Please enter a value</h3>`)
+    } else if(cBtn.checked) {
         console.log("C");
         toCelsius(temp);
     } else if (fBtn.checked) {
         console.log("F");
         toFahrenheit(temp);
     };
-    // printToDom("tempOutput", tempInput.value)
 };
 
 const clear = () => {
@@ -72,3 +73,5 @@ clearBtn.addEventListener('click', function(){
     e.preventDefault();
     clear();
 })
+
+// tempInput.addEventListener('keydown', determineConverter(), "return");
