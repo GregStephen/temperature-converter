@@ -8,7 +8,22 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
+    <h1>Temperature Converter!</h1>
     
+    <form action="">
+        <input id="tempInput" type="text" placeholder="Temperature">
+        <div id="radioBtns">
+            <label>Convert To:</label>
+            <input type="radio" name ="tempType" id="celsius" value="celsius">
+            <label for="celsius">Celsius</label>
+            <input type="radio" name ="tempType" id="fahrenheit" value="fahrenheit" checked="checked">
+            <label for="fahrenheit">Fahrenheit</label>
+        </div>
+        <button id="convertBtn">Convert</button>
+    </form>
+    <div id="tempOutput">
+
+    </div>
     <script src="./main.js"></script>
 </body>
 </html>
