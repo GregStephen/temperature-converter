@@ -24,15 +24,14 @@ const domStringBuilder = (finalTemp, unit) => {
             domString += `${finalTemp} `;
             domString += `&deg;`;
             domString += `${unit}`; 
-        domString += `</h2>`;
-    } else {
+            domString += `</h2>`;
+        } else {
         domString += `<h2 class="blue">`;
             domString += `${finalTemp} `;
             domString += `&deg;`;
             domString += `${unit}`; 
         domString += `</h2>`;
-    }
-    
+    } 
     printToDom("tempOutput", domString);
 };
 
@@ -62,16 +61,16 @@ const determineConverter = (temp) => {
 const clear = () => {
     tempInput.value = "";
     tempOutput.innerHTML = "";
-}
+};
 
 convertBtn.addEventListener('click', function(e){
     e.preventDefault();
     determineConverter(tempInput.value);
-    });
+});
 
 clearBtn.addEventListener('click', function(){
     e.preventDefault();
     clear();
-})
+});
 
 // tempInput.addEventListener('keydown', determineConverter(), "return");
