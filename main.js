@@ -73,4 +73,4 @@ clearBtn.addEventListener('click', function(){
     clear();
 });
 
-// tempInput.addEventListener('keydown', determineConverter(), "return");
+tempInput.addEventListener('keydown', determineConverter(), "return");

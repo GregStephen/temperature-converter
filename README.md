@@ -17,3 +17,15 @@ When the temp is in the cold range:
 
 When the temp is in the hot range:
 ![hot range](./assets/screenshots/hot.png "hot temp")
+
+## Tech Used
+* HTML
+* CSS
+* Javascript 
+
+
+## How To Run
+1. Go to: `https://www.npmjs.com/package/http-server` and install "http-server".  
+2. Navigate to the project folder in command line interface and type: `http-server -p 8080`  
+3. This will show at: `http://localhost:8080` in your internet browser.
+
